@@ -61,7 +61,10 @@ class _MainFeedViewState extends State<MainFeedView> with TickerProviderStateMix
               const ItemAnimationProperties(duration: Duration(microseconds: 200), curve: Curves.ease),
           screenTransitionAnimation: const ScreenTransitionAnimation(
               animateTabTransition: true, curve: Curves.ease, duration: Duration(milliseconds: 200)),
-          navBarStyle: NavBarStyle.neumorphic,
+          navBarStyle: NavBarStyle.style3,
+          backgroundColor: AppThemeLight.instance.appColorScheme.surface,
+          decoration: const NavBarDecoration(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10))),
         ),
       ),
     );
@@ -72,20 +75,20 @@ class _MainFeedViewState extends State<MainFeedView> with TickerProviderStateMix
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.map_pin_ellipse),
         title: ("Map"),
-        activeColorPrimary: AppThemeLight.instance.appColorScheme.surface,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: AppThemeLight.instance.appColorScheme.secondary,
+        inactiveColorPrimary: Colors.white,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.home),
         title: ("Feed"),
-        activeColorPrimary: AppThemeLight.instance.appColorScheme.surface,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: AppThemeLight.instance.appColorScheme.secondary,
+        inactiveColorPrimary: Colors.white,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.profile_circled),
         title: ("Profile"),
-        activeColorPrimary: AppThemeLight.instance.appColorScheme.surface,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: AppThemeLight.instance.appColorScheme.secondary,
+        inactiveColorPrimary: Colors.white,
       ),
     ];
   }

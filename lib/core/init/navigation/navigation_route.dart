@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:oua/view/authanticate/login/view/login_view.dart';
 import 'package:oua/view/mainFeed/main_feed_view.dart';
 import 'package:oua/view/map/view/map_view.dart';
 import 'package:oua/view/profile/view/profile_view.dart';
 
 import '../../../view/_product/widgets/not_found_nav_widget.dart';
-import '../../../view/authanticate/login/view/login_view.dart';
 import '../../../view/feed/view/feed_view.dart';
 import '../../constants/navigation/navigation_constants.dart';
 
@@ -16,7 +16,7 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.DEFAULT:
-        return normalNavigatie(const LoginView(), NavigationConstants.DEFAULT);
+        return normalNavigatie(MainFeedView(initialIndex: 2), NavigationConstants.DEFAULT);
 
       case NavigationConstants.FEED:
         return normalNavigatie(const FeedView(), NavigationConstants.DEFAULT);
@@ -29,6 +29,9 @@ class NavigationRoute {
 
       case NavigationConstants.PROFILE:
         return normalNavigatie(const ProfileView(), NavigationConstants.DEFAULT);
+
+      case NavigationConstants.LOGIN:
+        return normalNavigatie(const LoginView(), NavigationConstants.DEFAULT);
 
       default:
         return MaterialPageRoute(builder: (context) => const NotFoundNavigationWidget());

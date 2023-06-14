@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:oua/core/base/view/base_view.dart';
+import 'package:oua/core/init/theme/app_theme_light.dart';
 import 'package:oua/view/authanticate/login/view_model/login_view_model.dart';
 import 'package:kartal/kartal.dart';
+
+import '../../../../core/constants/app/app_constants.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -15,7 +18,10 @@ class LoginView extends StatelessWidget {
           model.init();
         },
         onPageBuilder: (BuildContext context, LoginViewModel vm) => Scaffold(
-              appBar: AppBar(),
+              appBar: AppBar(
+                centerTitle: true,
+                title: const Text(ApplicationConstants.APP_NAME, style: TextStyle(color: Colors.black)),
+              ),
               key: vm.formState,
               body: SingleChildScrollView(
                 physics: const NeverScrollableScrollPhysics(),
@@ -55,7 +61,9 @@ class LoginView extends StatelessWidget {
           onPressed: () {
             vm.navigateToMainFeed();
           },
-          style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+          style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              backgroundColor: AppThemeLight.instance.appColorScheme.secondary),
           child: const Text("Giriş Yapmadan Devam Et"),
         ));
   }
@@ -67,7 +75,9 @@ class LoginView extends StatelessWidget {
         decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(15)),
         child: ElevatedButton(
           onPressed: () {},
-          style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+          style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              backgroundColor: AppThemeLight.instance.appColorScheme.secondary),
           child: const Text("Giriş Yap"),
         ));
   }

@@ -72,8 +72,8 @@ class AppThemeLight extends AppTheme {
   ColorScheme get appColorScheme {
     return ColorScheme(
         primary: colorSchemeLight!.black, //xx
-        secondary: const Color(0xff933E30),
-        surface: const Color.fromARGB(255, 0, 224, 228), //xx
+        secondary: const Color(0xFFfeaf00),
+        surface: const Color(0xFF18598d), //xx
         background: const Color(0xffF8E1D4), //xx
         outline: const Color(0xff970A0A),
         error: Colors.red,

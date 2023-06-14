@@ -27,9 +27,10 @@ class MyApp extends StatelessWidget {
                 statusBarColor: Colors.transparent,
                 statusBarIconBrightness: Brightness.dark),
             child: MaterialApp(
+              theme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Colors.white)),
               debugShowCheckedModeBanner: false,
               navigatorKey: NavigationService.instance.navigatorKey,
-              // home: const DashBoardView(),
+              // home: const ProfileView(),
               onGenerateRoute: NavigationRoute.instance.generateRoute,
             ));
       },

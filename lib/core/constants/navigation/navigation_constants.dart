@@ -7,4 +7,5 @@ class NavigationConstants {
   static const MAINFEED = "/mainfeed";
   static const PROFILE = "/profile";
   static const MAP = "/map";
+  static const LOGIN = "/login";
 }
