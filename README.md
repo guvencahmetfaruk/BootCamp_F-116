@@ -13,8 +13,7 @@ Takım F-116
 - [Aybüke Uzer: Developer](https://www.linkedin.com/in/aybukeuzer/)
 
 ## Ürün İsmi
-
-
+-- FRiM (Find Restaurant in Map) --
 
 ## Ürün Açıklaması
 
