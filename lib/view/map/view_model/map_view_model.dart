@@ -34,6 +34,23 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   @observable
   bool isSearch = false;
 
+  @observable
+  bool isFilterVejeteryanClicked = false;
+  @observable
+  bool isFilterVeganClicked = false;
+  @observable
+  bool isFilterMakarnaClicked = false;
+  @observable
+  bool isFilterOgrenciClicked = false;
+  @observable
+  bool isFilterIcecekClicked = false;
+  @observable
+  bool isFilterTatliClicked = false;
+  @observable
+  bool isFilterHamburgerClicked = false;
+  @observable
+  bool isFilterPizzaClicked = false;
+
   final marker = const Marker(
       markerId: MarkerId("ev"),
       position: LatLng(41.075781, 28.961359),
@@ -58,5 +75,10 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   @action
   void searchChange() {
     isSearch = !isSearch;
+  }
+
+  @action
+  void clickedChaneg(bool value) {
+    value = !value;
   }
 }
