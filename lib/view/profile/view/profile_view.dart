@@ -22,21 +22,31 @@ class ProfileView extends StatelessWidget {
           model.setContext(context);
           model.init();
         },
-        onPageBuilder: (context, vm) => Scaffold(body: Observer(
-              builder: (_) {
-                return SafeArea(
-                  child: SingleChildScrollView(
-                    physics:
-                        vm.isLoggedIn ? const AlwaysScrollableScrollPhysics() : const NeverScrollableScrollPhysics(),
-                    child: vm.isLoggedIn
-                        ? signedProfilePage(context, vm)
-                        : unSignedProfilePage(
-                            vm: vm,
-                          ),
-                  ),
-                );
-              },
-            )));
+        onPageBuilder: (context, vm) => Scaffold(
+              key: vm.scaffoldKey,
+              body: Observer(
+                builder: (_) {
+                  return SafeArea(
+                    child: SingleChildScrollView(
+                      physics:
+                          vm.isLoggedIn ? const AlwaysScrollableScrollPhysics() : const NeverScrollableScrollPhysics(),
+                      child: vm.isLoggedIn
+                          ? signedProfilePage(context, vm)
+                          : unSignedProfilePage(
+                              vm: vm,
+                            ),
+                    ),
+                  );
+                },
+              ),
+              endDrawer: _profileDrawer(),
+            ));
+  }
+
+  Drawer _profileDrawer() {
+    return const Drawer(
+      child: Column(children: [Text("asd")]),
+    );
   }
 
   Column signedProfilePage(BuildContext context, ProfileViewModel vm) {
@@ -51,10 +61,37 @@ class ProfileView extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        decoration: const BoxDecoration(
+                            borderRadius:
+                                BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+                        height: context.height * 0.5,
+                        child: SingleChildScrollView(
+                            child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: context.height * 0.25,
+                                width: context.width * 0.8,
+                                decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
+                              ),
+                            );
+                          },
+                        )),
+                      );
+                    });
+              },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
               child: Icon(
-                Icons.menu,
+                Icons.star_outline,
                 color: AppThemeLight.instance.appColorScheme.surface,
               ),
             )
@@ -91,13 +128,12 @@ class ProfileView extends StatelessWidget {
           children: [
             const Text("Kullanıcı Bilgileri"),
             ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-              child: Text(
-                "Profiili Düzenle",
-                style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
-              ),
-            ),
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                child: Icon(
+                  Icons.settings,
+                  color: AppThemeLight.instance.appColorScheme.surface,
+                )),
           ],
         ),
       ),

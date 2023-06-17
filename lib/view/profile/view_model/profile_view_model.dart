@@ -22,6 +22,9 @@ abstract class _ProfileViewModelBase extends BaseViewModel with Store {
   @observable
   bool isLoggedIn = false;
 
+  @observable
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @action
   void isUserLoggedIn() {
     isLoggedIn = authService.checkUserLoggedIn();
