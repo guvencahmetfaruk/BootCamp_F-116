@@ -94,7 +94,7 @@ class _MainFeedViewState extends State<MainFeedView> with TickerProviderStateMix
   }
 
   List<Widget> _buildScreens() {
-    return [const MapView(), const FeedView(), const ProfileView()];
+    return [const MapView(), const FeedView(), ProfileView()];
   }
 
   Widget _willPopScopeDialog(BuildContext context) {

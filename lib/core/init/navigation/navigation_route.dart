@@ -29,7 +29,7 @@ class NavigationRoute {
         return normalNavigatie(const MapView(), NavigationConstants.DEFAULT);
 
       case NavigationConstants.PROFILE:
-        return normalNavigatie(const ProfileView(), NavigationConstants.DEFAULT);
+        return normalNavigatie(ProfileView(), NavigationConstants.DEFAULT);
 
       case NavigationConstants.LOGIN:
         return normalNavigatie(const LoginView(), NavigationConstants.DEFAULT);
