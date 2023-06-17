@@ -36,8 +36,9 @@ FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulma
 
 ## Hedef Kitle
 
--
-- 
-- 
-- 
-- 
+- Öğrenciler
+- Dışardan yiyen çalışan kesim
+- Seyahat Edenler
+- Gurmeler ve Yemek Tutkunları
+- İş veya Özel Etkinlik Düzenleyenler
+- Bir mekanda vakit geçirmek isteyen kişiler
