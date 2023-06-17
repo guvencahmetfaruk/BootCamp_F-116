@@ -1,15 +1,18 @@
 // ignore_for_file: must_be_immutable, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
 import 'package:oua/core/base/view/base_view.dart';
-import 'package:oua/core/constants/app/app_constants.dart';
+import 'package:oua/repository/auth_service.dart';
 import 'package:oua/view/profile/view_model/profile_view_model.dart';
 
 import '../../../core/init/theme/app_theme_light.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+  ProfileView({super.key});
+
+  final AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +22,104 @@ class ProfileView extends StatelessWidget {
           model.setContext(context);
           model.init();
         },
-        onPageBuilder: (context, vm) => Scaffold(
-              appBar: AppBar(
-                  centerTitle: true,
-                  title: const Text(ApplicationConstants.APP_NAME, style: TextStyle(color: Colors.black))),
-              body: unSignedProfilePage(vm: vm),
-            ));
+        onPageBuilder: (context, vm) => Scaffold(body: Observer(
+              builder: (_) {
+                return SafeArea(
+                  child: SingleChildScrollView(
+                    physics:
+                        vm.isLoggedIn ? const AlwaysScrollableScrollPhysics() : const NeverScrollableScrollPhysics(),
+                    child: vm.isLoggedIn
+                        ? signedProfilePage(context, vm)
+                        : unSignedProfilePage(
+                            vm: vm,
+                          ),
+                  ),
+                );
+              },
+            )));
+  }
+
+  Column signedProfilePage(BuildContext context, ProfileViewModel vm) {
+    return Column(children: [
+      Padding(
+        padding: context.paddingLow,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              "@KullanıcıAdı",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+              child: Icon(
+                Icons.menu,
+                color: AppThemeLight.instance.appColorScheme.surface,
+              ),
+            )
+          ],
+        ),
+      ),
+      const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [Text("Takip 258"), Text("Takipçi 258")],
+          ),
+          CircleAvatar(
+            minRadius: 50,
+            child: Icon(
+              Icons.person_outline,
+              size: 45,
+            ),
+          ),
+          Text("Puan  1534")
+        ],
+      ),
+      Padding(
+        padding: context.paddingLow,
+        child: const Center(
+          child: Text("Kullanıcı İsmi"),
+        ),
+      ),
+      Padding(
+        padding: context.paddingLow,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Kullanıcı Bilgileri"),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+              child: Text(
+                "Profiili Düzenle",
+                style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+              ),
+            ),
+          ],
+        ),
+      ),
+      const Divider(thickness: 3),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          physics: const AlwaysScrollableScrollPhysics(),
+          shrinkWrap: true,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3, crossAxisSpacing: 10, mainAxisSpacing: 10),
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return Container(
+              color: Colors.black,
+              width: context.width * 0.2,
+              height: context.height * 0.1,
+            );
+          },
+        ),
+      )
+    ]);
   }
 }
 

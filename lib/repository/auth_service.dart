@@ -2,7 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 
-class RegisterService {
+class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   bool checkUserLoggedIn() {
@@ -33,15 +33,17 @@ class RegisterService {
     }
   }
 
-  Future<void> signInUser(String email, String password) async {
+  Future<bool> signInUser(String email, String password) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
       print('Kullanıcı giriş yaptı: ${userCredential.user!.email}');
+      return true;
     } catch (e) {
       print('Hata: $e');
+      return false;
     }
   }
 

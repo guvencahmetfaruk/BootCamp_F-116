@@ -39,12 +39,8 @@ class LoginView extends StatelessWidget {
                       ),
                       Padding(
                         padding: context.onlyTopPaddingMedium,
-                        child: _buttonLogin(context),
+                        child: _buttonLogin(context, vm),
                       ),
-                      Padding(
-                        padding: context.onlyTopPaddingMedium,
-                        child: _buttonDevam(context, vm),
-                      )
                     ],
                   ),
                 ),
@@ -52,29 +48,20 @@ class LoginView extends StatelessWidget {
             ));
   }
 
-  Container _buttonDevam(BuildContext context, LoginViewModel vm) {
+  Container _buttonLogin(BuildContext context, LoginViewModel vm) {
     return Container(
         width: context.width * 0.7,
         height: context.height * 0.06,
         decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(15)),
         child: ElevatedButton(
-          onPressed: () {
-            vm.navigateToMainFeed();
+          onPressed: () async {
+            var value = await vm.signIn(vm.mail_controller.text, vm.password_controller.text);
+            if (value) {
+              vm.navigateToMainFeed();
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Bilgileriniz Yanlış")));
+            }
           },
-          style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-              backgroundColor: AppThemeLight.instance.appColorScheme.surface),
-          child: const Text("Giriş Yapmadan Devam Et"),
-        ));
-  }
-
-  Container _buttonLogin(BuildContext context) {
-    return Container(
-        width: context.width * 0.7,
-        height: context.height * 0.06,
-        decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(15)),
-        child: ElevatedButton(
-          onPressed: () {},
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
               backgroundColor: AppThemeLight.instance.appColorScheme.surface),

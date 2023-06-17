@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:oua/core/constants/navigation/navigation_constants.dart';
+import 'package:oua/repository/auth_service.dart';
 
 import '../../../../core/base/model/base_view_model.dart';
 
@@ -16,11 +17,18 @@ abstract class _LoginViewModelBase extends BaseViewModel with Store {
   @override
   void init() {}
 
+  final AuthService authService = AuthService();
+
   GlobalKey<FormState> formState = GlobalKey();
   TextEditingController mail_controller = TextEditingController();
   TextEditingController password_controller = TextEditingController();
 
   void navigateToMainFeed() {
     navigation.navigateToPage(path: NavigationConstants.MAINFEED);
+  }
+
+  @action
+  Future<bool> signIn(String email, String password) async {
+    return await authService.signInUser(email, password);
   }
 }

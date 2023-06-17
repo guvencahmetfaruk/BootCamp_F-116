@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:oua/core/base/view/base_view.dart';
-import 'package:oua/service/auth_service.dart';
+import 'package:oua/repository/auth_service.dart';
 
 import '../../../../core/init/theme/app_theme_light.dart';
 import '../view_model/register_view_model.dart';
 
 class RegisterView extends StatelessWidget {
   RegisterView({super.key});
-  RegisterService service = RegisterService();
+  AuthService service = AuthService();
 
   @override
   Widget build(BuildContext context) {
