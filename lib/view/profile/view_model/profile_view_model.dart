@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:oua/core/base/model/base_view_model.dart';
@@ -14,5 +16,9 @@ abstract class _ProfileViewModelBase extends BaseViewModel with Store {
 
   void navigateToLogin() {
     navigation.navigateToPage(path: NavigationConstants.LOGIN);
+  }
+
+  void navigateToRegister() {
+    navigation.navigateToPage(path: NavigationConstants.REGISTER);
   }
 }

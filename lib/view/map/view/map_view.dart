@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kartal/kartal.dart';
@@ -77,6 +79,7 @@ class MapView extends StatelessWidget {
           height: context.height * 0.8,
           color: Colors.amberAccent,
           child: Drawer(
+              backgroundColor: AppThemeLight.instance.appColorScheme.surface,
               width: context.width * 0.65,
               child: Stack(children: [
                 Container(
@@ -116,11 +119,11 @@ class MapView extends StatelessWidget {
                   margin: EdgeInsets.only(left: context.width * 0.52),
                   width: context.width * 0.12,
                   height: context.height * 0.12,
-                  decoration: BoxDecoration(
-                      color: AppThemeLight.instance.appColorScheme.surface,
+                  decoration: const BoxDecoration(
+                      color: Colors.white60,
                       shape: BoxShape.circle,
-                      boxShadow: const [BoxShadow(color: Colors.black54, spreadRadius: 1, blurRadius: 2)]),
-                  child: const Center(child: Icon(Icons.menu, color: Colors.white)),
+                      boxShadow: [BoxShadow(color: Colors.black54, spreadRadius: 1, blurRadius: 2)]),
+                  child: Center(child: Icon(Icons.menu, color: AppThemeLight.instance.appColorScheme.surface)),
                 ),
               ])),
         ),

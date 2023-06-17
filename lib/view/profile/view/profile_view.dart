@@ -49,7 +49,9 @@ class unSignedProfilePage extends StatelessWidget {
             child: const Text("Giriş Yap"),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              vm.navigateToRegister();
+            },
             style: ElevatedButton.styleFrom(
                 minimumSize: Size(context.width * 0.8, context.height * 0.05),
                 backgroundColor: AppThemeLight.instance.appColorScheme.surface),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oua/view/authanticate/login/view/login_view.dart';
+import 'package:oua/view/authanticate/register/view/register_view.dart';
 import 'package:oua/view/mainFeed/main_feed_view.dart';
 import 'package:oua/view/map/view/map_view.dart';
 import 'package:oua/view/profile/view/profile_view.dart';
@@ -32,6 +33,9 @@ class NavigationRoute {
 
       case NavigationConstants.LOGIN:
         return normalNavigatie(const LoginView(), NavigationConstants.DEFAULT);
+
+      case NavigationConstants.REGISTER:
+        return normalNavigatie(RegisterView(), NavigationConstants.DEFAULT);
 
       default:
         return MaterialPageRoute(builder: (context) => const NotFoundNavigationWidget());

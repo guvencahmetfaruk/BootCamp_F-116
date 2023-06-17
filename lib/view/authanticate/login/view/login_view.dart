@@ -63,7 +63,7 @@ class LoginView extends StatelessWidget {
           },
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-              backgroundColor: AppThemeLight.instance.appColorScheme.secondary),
+              backgroundColor: AppThemeLight.instance.appColorScheme.surface),
           child: const Text("Giriş Yapmadan Devam Et"),
         ));
   }
@@ -77,7 +77,7 @@ class LoginView extends StatelessWidget {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-              backgroundColor: AppThemeLight.instance.appColorScheme.secondary),
+              backgroundColor: AppThemeLight.instance.appColorScheme.surface),
           child: const Text("Giriş Yap"),
         ));
   }

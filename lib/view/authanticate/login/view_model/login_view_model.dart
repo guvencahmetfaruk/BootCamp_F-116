@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, non_constant_identifier_names, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';

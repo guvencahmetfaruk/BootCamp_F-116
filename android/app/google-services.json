@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1086086283040",
+    "project_id": "frim-1f51c",
+    "storage_bucket": "frim-1f51c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086086283040:android:207dadbe86a8bbabd1a145",
+        "android_client_info": {
+          "package_name": "com.example.oua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086086283040-qk9ividu5f9gge7sejtg0r7um9ndnf16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9mLDH-c8q_Bh5C3aUeQBlECxO1rLchz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086086283040-qk9ividu5f9gge7sejtg0r7um9ndnf16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
