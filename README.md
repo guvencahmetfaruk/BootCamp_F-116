@@ -16,7 +16,7 @@ Takım F-116
 -- FRiM (Find Restaurant in Map) --
 
 ## Ürün Açıklaması
-
+FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulmayı hızlandırır. Harita üzerinde mekanların puanlarıyla birlikte size olan mesafeleri görünebilmektedir. Özel olarak bir şey istediğinizde arama yaparak haritayı spesifik olarak yeniden düzenleyebilir, filtrelerle birlikte istediğiniz türdeki mekanı ve ürünü kısa zaman içerisinde bulabilirsiniz. Yol tarifi al seçeneğiyle birlikte nasıl gideceğim sorununu da ortadan kaldırır.FRiM, aktif kullanıcı ağı sayesinde ürünlerin gerçek hallerini görüntülenmesini sağlar ve mevcut fiyatlarını öğrenilebilir. Ürünler hakkında kullanıcıların ve yemek eleştirmenlerinin yorumlarını okuyarak fikir sahibi olunabilir. Beğenilen yerler ya da gitmek istenilen yerleri listeler oluşturarak kaydedilebilir daha sonra tekrar kolayca bulunabilir. İşletmeye uygulama üzerinden rezervasyon yapabilir ve sipariş verilebilir böylece mekana gidildiğinde yemek çoktan hazırlanmaya başlanmış olur bu sayede beklemeye harcanan zaman en aza indirilir.
 
 ## Ürün Özellikleri
 -
