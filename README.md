@@ -1,7 +1,6 @@
 # **Takım İsmi**
 
-Takım F-116
-
+by-116
 # Ürün İle İlgili Bilgiler
 
 ## Takım Elemanları
@@ -47,7 +46,7 @@ FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulma
 
 # Sprint 1
 [Trello Backlog 1. Sprint ](https://trello.com/b/FTFRADHE/sprint-1)
-- **Sprint Notları**: Takım olarak günlül iletişimde Whatsapp kullanılmaktadır. Proje yönetiminde Trello kullanılmasına karar verilmiştir. User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir. 
+- **Sprint Notları**: Takım olarak günlük iletişimde Whatsapp kullanılmaktadır. Proje yönetiminde Trello kullanılmasına karar verilmiştir. User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir. 
 
 - **Sprint içinde tamamlanması tahmin edilen puan**: 99 Puan
 
@@ -57,12 +56,43 @@ FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulma
 
 Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken yeşil item'lar yapılacak işleri (task) gösterirken, kırmızı item'lar story'leri temsil etmektedir.
 
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Slack üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/BootcampScrumTemplate/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
+- **Daily Scrum**: Daily Scrum toplantıları bütün ekibin aynı anda uygun olmamasından dolayı whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Proje yönetimi klasöründe paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/BootcampScrumTemplate/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
 
 - **Sprint board update**: Sprint board screenshotları: 
 
 
 - **Ürün Durumu**: Ekran görüntüleri:
+   
+<table>
+ 
+  <tr>
+    <td>1</td>
+     <td>2</td>
+     <td>3</td>
+   
+  <tr>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.13.11.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.13.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.14.jpg" width="307" height="682"></td>
+ </table>
+ 
+ 
+<table>
+  <tr>
+    <td>4</td>
+     <td>5</td>
+     <td>6</td>
+  <tr>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/ana%20sayfa.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/giri%C5%9F.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/kullan%C4%B1c%C4%B1.jpg" width="307" height="682"></td>
+<table>
+<table>
+  <tr>
+    <td>7</td>
+  <tr>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/Kay%C4%B1t.jpg" width="307" height="682"></td>
+<table>
 
 
 - **Sprint Review**: 
@@ -72,47 +102,6 @@ Alınan kararlar: Veritabanı oluşturması email ile toplanacak veriler için g
   - 
   -
   -
-<table>
-  <tr>
-    <td>1</td>
-     <td>2</td>
-     <td>3</td>
-    
-
-  <tr>
-    <td><img src="" width="350" height="540"></td>
-    <td><img src="" width="350" height="540"></td>
-    <td><img src="" width="350" height="540"></td>
-   
- </table>
-
-<table>
-  <tr>
-    <td>4</td>
-     <td>5</td>
-     <td>6</td>
-    
-
-  <tr>
-    <td><img src="" width="350" height="540"></td>
-    <td><img src="" width="350" height="540"></td>
-    <td><img src="" width="350" height="540"></td>
-   
- </table>
-
-  
-<table>
-  <tr>
-    <td>7</td>
-     <td>8</td>
-    
-
-  <tr>
-    <td><img src="" width="350" height="540"></td>
-    <td><img src="" width="350" height="540"></td>
-
-   
- </table>
 
 
 ---
