@@ -75,9 +75,9 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken ye
      <td>3</td>
    
   <tr>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.13.11.jpg" width="307" height="682"></td>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.13.jpg" width="307" height="682"></td>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.14.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.13.11.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.13.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.14.jpg" width="307" height="600"></td>
  </table>
  
  
@@ -87,15 +87,15 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken ye
      <td>5</td>
      <td>6</td>
   <tr>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/ana%20sayfa.jpg" width="307" height="682"></td>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/giri%C5%9F.jpg" width="307" height="682"></td>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/kullan%C4%B1c%C4%B1.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/ana%20sayfa.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/giri%C5%9F.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/kullan%C4%B1c%C4%B1.jpg" width="307" height="600"></td>
 <table>
 <table>
   <tr>
     <td>7</td>
   <tr>
-    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/Kay%C4%B1t.jpg" width="307" height="682"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/Kay%C4%B1t.jpg" width="307" height="600"></td>
 <table>
 
 
