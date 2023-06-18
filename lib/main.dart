@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Colors.white)),
               debugShowCheckedModeBanner: false,
               navigatorKey: NavigationService.instance.navigatorKey,
-              // home: const ProfileView(),
+              // home: const RestaurantProfileView(),
               onGenerateRoute: NavigationRoute.instance.generateRoute,
             ));
       },
