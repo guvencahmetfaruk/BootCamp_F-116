@@ -59,7 +59,11 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken ye
 - **Daily Scrum**: Daily Scrum toplantılarının bütün ekibin aynı anda uygun olmamasından dolayı whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpg olarak Proje yönetimi klasöründe paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/guvencahmetfaruk/BootCamp_F-116/tree/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Daily%20scrum/1.%20Sprint)
 
 - **Sprint board update**: Sprint board screenshotları: 
-
+![Sprint1_1](https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Trello/Trello/1.Sprint/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-18%20202319.png) 
+![Sprint1_1](https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Trello/Trello/1.Sprint/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-18%20202819.png)
+![Sprint1_1](https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Trello/Trello/1.Sprint/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-18%20203236.png)
+![Sprint1_1](https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Trello/Trello/1.Sprint/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-18%20203828.png)
+![Sprint1_1](https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Trello/Trello/1.Sprint/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-18%20203957.png)
 
 - **Ürün Durumu**: Ekran görüntüleri:
    
