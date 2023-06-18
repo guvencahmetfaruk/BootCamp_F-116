@@ -46,15 +46,15 @@ FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulma
 
 # Sprint 1
 [Trello Backlog 1. Sprint ](https://trello.com/b/FTFRADHE/sprint-1)
-- **Sprint Notları**: Takım olarak günlük iletişimde Whatsapp kullanılmaktadır. Proje yönetiminde Trello kullanılmasına karar verilmiştir. User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir. 
+- **Sprint Notları**: Takım olarak günlük iletişimde Whatsapp kullanılmaktadır. Proje yönetiminde Trello kullanılmasına karar verilmiştir. User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir. Bu sprint içerisinde tamamlanması beklenmeyen backlogların alt görevleri yapılmaya devam edecektir.
 
-- **Sprint içinde tamamlanması tahmin edilen puan**: 99 Puan
+- **Sprint içinde tamamlanması tahmin edilen puan**: 44 Puan
 
-- **Puan tamamlama mantığı**: 3 sprint boyunca yapılması gereken user storyler listelenmiştir ve puan verilmiştir. Toplam 279 puanlık backlog bulunmaktadır. Proje süreci boyunca kullanıcı değerlendirmelerine göre eklenecek storylerde göz önüne alınarak ilk sprintte 99 puanın tamamlanmasına karar verilmiştir.
+- **Puan tamamlama mantığı**: 3 sprint boyunca yapılması gereken user storyler listelenmiştir ve puan verilmiştir. Toplam 279 puanlık backlog bulunmaktadır.İlk sprint için takım üyelerinin iş yapabilme zamanları göz önüne alınarak 44 puanın tamamlanmasına karar verilmiştir.
 
 - **Backlog düzeni ve Story seçimleri**: Projede yapılacak bütün storyler sıralanmıştır ve öncelik sırasına konmuştur. İlk sprintte toplam puanın üçte birini karşılayacak şekilde storyler seçilmiştir.
 
-Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken yeşil item'lar yapılacak işleri (task) gösterirken, kırmızı item'lar story'leri temsil etmektedir.
+Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, yeşil item'lar story'leri temsil etmektedir.
 
 - **Daily Scrum**: Daily Scrum toplantılarının bütün ekibin aynı anda uygun olmamasından dolayı whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpg olarak Proje yönetimi klasöründe paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/guvencahmetfaruk/BootCamp_F-116/tree/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Daily%20scrum/1.%20Sprint)
 
