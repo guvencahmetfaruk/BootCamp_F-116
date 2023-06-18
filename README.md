@@ -42,3 +42,77 @@ FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulma
 - Gurmeler ve Yemek Tutkunları
 - İş veya Özel Etkinlik Düzenleyenler
 - Bir mekanda vakit geçirmek isteyen kişiler
+
+---
+
+# Sprint 1
+[Trello Backlog 1. Sprint ](https://trello.com/b/FTFRADHE/sprint-1)
+- **Sprint Notları**: Takım olarak günlül iletişimde Whatsapp kullanılmaktadır. Proje yönetiminde Trello kullanılmasına karar verilmiştir. User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir. 
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 99 Puan
+
+- **Puan tamamlama mantığı**: 3 sprint boyunca yapılması gereken user storyler listelenmiştir ve puan verilmiştir. Toplam 279 puanlık backlog bulunmaktadır. Proje süreci boyunca kullanıcı değerlendirmelerine göre eklenecek storylerde göz önüne alınarak ilk sprintte 99 puanın tamamlanmasına karar verilmiştir.
+
+- **Backlog düzeni ve Story seçimleri**: Projede yapılacak bütün storyler sıralanmıştır ve öncelik sırasına konmuştur. İlk sprintte toplam puanın üçte birini karşılayacak şekilde storyler seçilmiştir.
+
+Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken yeşil item'lar yapılacak işleri (task) gösterirken, kırmızı item'lar story'leri temsil etmektedir.
+
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Slack üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/BootcampScrumTemplate/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
+
+- **Sprint board update**: Sprint board screenshotları: 
+
+
+- **Ürün Durumu**: Ekran görüntüleri:
+
+
+- **Sprint Review**: 
+Alınan kararlar: Veritabanı oluşturması email ile toplanacak veriler için gerekli görülmüştür. Fakat bir yandan da veritabanı form sayfası için gerekli olmamıştır. O sebeple PBI bir sonraki sprint'e aktarılmıştır. Çıkan ürünün çalışmasında ve testlerinde bir problem görülmemiştir. Ekstra koyulması gereken özellikler belirlenmiştir. Sprint Review katılımcıları: Ahmet Faruk Güvenç, Berkay Kaynar, Melek Taş, Aslı İzci, Aybüke Uzer
+
+- **Sprint Retrospective:**
+  - 
+  -
+  -
+<table>
+  <tr>
+    <td>1</td>
+     <td>2</td>
+     <td>3</td>
+    
+
+  <tr>
+    <td><img src="" width="350" height="540"></td>
+    <td><img src="" width="350" height="540"></td>
+    <td><img src="" width="350" height="540"></td>
+   
+ </table>
+
+<table>
+  <tr>
+    <td>4</td>
+     <td>5</td>
+     <td>6</td>
+    
+
+  <tr>
+    <td><img src="" width="350" height="540"></td>
+    <td><img src="" width="350" height="540"></td>
+    <td><img src="" width="350" height="540"></td>
+   
+ </table>
+
+  
+<table>
+  <tr>
+    <td>7</td>
+     <td>8</td>
+    
+
+  <tr>
+    <td><img src="" width="350" height="540"></td>
+    <td><img src="" width="350" height="540"></td>
+
+   
+ </table>
+
+
+---
