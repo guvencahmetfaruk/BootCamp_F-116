@@ -99,7 +99,7 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken k�
 <table>
 
 
-- **Sprint Review**: Uygulamanın şuanki durumu ekiple paylaşılarak gözden geçirilmiştir. İlk sprint olması, takım içerisinde kişi değişiklikleri, ekip üyelerinin işlerinden dolayı tamamlanamayan backloglar ikinci sprinte aktarılmıştır. Sayfaların işlevsel hale getirilmesi için firabase bağlantılarının yapılacağı konuşulmuştur. Ek olarak sayfa tasarımlarının devam etmesi gerektiğine karar verilmiştir. Sprint Review katılımcıları: Ahmet Faruk Güvenç, Berkay Kaynar, Melek Taş, Aslı İzci, Aybüke Uzer
+- **Sprint Review**: Uygulamanın şuanki durumu ekiple paylaşılarak gözden geçirilmiştir.Bu sprintte ek olarak yapmaya başlanılan ve halen devam eden backloglar ikinci sprinte aktarılmıştır. Sayfaların işlevsel hale getirilmesi için firabase bağlantılarının yapılacağı konuşulmuştur. Ek olarak sayfa tasarımlarının devam etmesi gerektiğine karar verilmiştir. Sprint Review katılımcıları: Ahmet Faruk Güvenç, Berkay Kaynar, Melek Taş, Aslı İzci, Aybüke Uzer
 
 - **Sprint Retrospective:**
   - Her hafta sonu yapılanları gözden geçirmek ve güncellemelerde bulunmak için toplantı yapılmasına karar verilmiştir
