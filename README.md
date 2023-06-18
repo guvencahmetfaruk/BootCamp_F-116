@@ -56,7 +56,7 @@ FRiM, dışarıda yeme ve içme mekanları ararken isteklere uygun yerleri bulma
 
 Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken yeşil item'lar yapılacak işleri (task) gösterirken, kırmızı item'lar story'leri temsil etmektedir.
 
-- **Daily Scrum**: Daily Scrum toplantıları bütün ekibin aynı anda uygun olmamasından dolayı whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Proje yönetimi klasöründe paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/BootcampScrumTemplate/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
+- **Daily Scrum**: Daily Scrum toplantılarının bütün ekibin aynı anda uygun olmamasından dolayı whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpg olarak Proje yönetimi klasöründe paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/guvencahmetfaruk/BootCamp_F-116/tree/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Daily%20scrum/1.%20Sprint)
 
 - **Sprint board update**: Sprint board screenshotları: 
 
@@ -95,13 +95,12 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken ye
 <table>
 
 
-- **Sprint Review**: 
-Alınan kararlar: Veritabanı oluşturması email ile toplanacak veriler için gerekli görülmüştür. Fakat bir yandan da veritabanı form sayfası için gerekli olmamıştır. O sebeple PBI bir sonraki sprint'e aktarılmıştır. Çıkan ürünün çalışmasında ve testlerinde bir problem görülmemiştir. Ekstra koyulması gereken özellikler belirlenmiştir. Sprint Review katılımcıları: Ahmet Faruk Güvenç, Berkay Kaynar, Melek Taş, Aslı İzci, Aybüke Uzer
+- **Sprint Review**: Uygulamanın şuanki durumu ekiple paylaşılarak gözden geçirilmiştir. İlk sprint olması, takım içerisinde kişi değişiklikleri, ekip üyelerinin işlerinden dolayı tamamlanamayan backloglar ikinci sprinte aktarılmıştır. Sayfaların işlevsel hale getirilmesi için firabase bağlantılarının yapılacağı konuşulmuştur. Ek olarak sayfa tasarımlarının devam etmesi gerektiğine karar verilmiştir. Sprint Review katılımcıları: Ahmet Faruk Güvenç, Berkay Kaynar, Melek Taş, Aslı İzci, Aybüke Uzer
 
 - **Sprint Retrospective:**
-  - 
-  -
-  -
+  - Her hafta sonu yapılanları gözden geçirmek ve güncellemelerde bulunmak için toplantı yapılmasına karar verilmiştir
+  - Ekibin Trello üzerinde daha aktif şekilde hareket etmesi gerektiği vurgulanmıştır
+  - Daily Scrumların düzenli olarak Whatsapp üzerinden ekiple paylaşılmasına karar verilmiştir
 
 
 ---
