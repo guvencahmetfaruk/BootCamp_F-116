@@ -108,3 +108,52 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür.Trello'da gözüken k�
 
 
 ---
+# Sprint 2
+- **Sprint Notları**: Bu sprint içerisinde ekip üyelerinin yoğunluklarından ve bayram tatili dolayısıyla aktif bir çalışma yapılmamıştır.
+  
+- **Sprint içinde tamamlanması tahmin edilen puan**: 0
+
+- **Puan tamamlama mantığı**: 3 sprint boyunca yapılması gereken user storyler listelenmiştir ve puan verilmiştir. Toplam 279 puanlık backlog bulunmaktadır. İkinci sprint için takım üyelerinin yoğunlukları ve bayram tatili dolayısıyla backlog tamamlanamayacağına karar verilmiştir.
+  
+- **Daily Scrum**
+
+- **Sprint board update**: Sprint board screenshotları: 
+![Sprint1_1](https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Trello/Trello/1.Sprint/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-18%20202319.png) 
+
+- **Ürün Durumu**: Ekran görüntüleri:
+<table>
+ 
+  <tr>
+    <td>1</td>
+     <td>2</td>
+     <td>3</td>
+   
+  <tr>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.13.11.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.13.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/WhatsApp%20G%C3%B6rsel%202023-06-18%20saat%2019.14.14.jpg" width="307" height="600"></td>
+ </table>
+ 
+ 
+<table>
+  <tr>
+    <td>4</td>
+     <td>5</td>
+     <td>6</td>
+  <tr>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/ana%20sayfa.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/giri%C5%9F.jpg" width="307" height="600"></td>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/kullan%C4%B1c%C4%B1.jpg" width="307" height="600"></td>
+<table>
+<table>
+  <tr>
+    <td>7</td>
+  <tr>
+    <td><img src="https://github.com/guvencahmetfaruk/BootCamp_F-116/blob/master/Proje%20Y%C3%B6netimi/G%C3%B6rseller/Uygulama/1.%20Sprint/Kay%C4%B1t.jpg" width="307" height="600"></td>
+<table>
+ 
+- **Sprint Review**: Her ekip üyesinin aktif bir şekilde nasıl çalışabileceği konuşulmuştur. Uygulamanın son haline gelmesi için yapılması gerekenler gözden geçirilmiş ve düzenlenmiştir. Sprint Review katılımcıları: Ahmet Faruk Güvenç, Berkay Kaynar, Melek Taş, Aslı İzci, Aybüke Uzer
+  
+- **Sprint Retrospective:**
+  - Buluşmalar yapılarak birlikte çalışmalar organize edilecek
+  - Çalışma temposu arttırılarak son sprintte bütün görevlerin tamamlanması sağlanacak
