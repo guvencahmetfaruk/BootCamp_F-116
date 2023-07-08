@@ -23,30 +23,22 @@ class ProfileView extends StatelessWidget {
           model.init();
         },
         onPageBuilder: (context, vm) => Scaffold(
-              key: vm.scaffoldKey,
-              body: Observer(
-                builder: (_) {
-                  return SafeArea(
-                    child: SingleChildScrollView(
-                      physics:
-                          vm.isLoggedIn ? const AlwaysScrollableScrollPhysics() : const NeverScrollableScrollPhysics(),
-                      child: vm.isLoggedIn
-                          ? signedProfilePage(context, vm)
-                          : unSignedProfilePage(
-                              vm: vm,
-                            ),
-                    ),
-                  );
-                },
-              ),
-              endDrawer: _profileDrawer(),
-            ));
-  }
-
-  Drawer _profileDrawer() {
-    return const Drawer(
-      child: Column(children: [Text("asd")]),
-    );
+            key: vm.scaffoldKey,
+            body: Observer(
+              builder: (_) {
+                return SafeArea(
+                  child: SingleChildScrollView(
+                    physics:
+                        vm.isLoggedIn ? const AlwaysScrollableScrollPhysics() : const NeverScrollableScrollPhysics(),
+                    child: vm.isLoggedIn
+                        ? signedProfilePage(context, vm)
+                        : unSignedProfilePage(
+                            vm: vm,
+                          ),
+                  ),
+                );
+              },
+            )));
   }
 
   Column signedProfilePage(BuildContext context, ProfileViewModel vm) {
@@ -128,7 +120,10 @@ class ProfileView extends StatelessWidget {
           children: [
             const Text("Kullanıcı Bilgileri"),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  authService.signOutUser();
+                  vm.isLoggedIn = false;
+                },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
                 child: Icon(
                   Icons.settings,

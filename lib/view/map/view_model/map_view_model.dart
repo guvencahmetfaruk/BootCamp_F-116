@@ -24,6 +24,11 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
     myIcon = await BitmapDescriptor.fromAssetImage(const ImageConfiguration(), ImageConstants.instance.starMarker);
   }
 
+  List filterList = ["Vejeteryan", "Vegan", "Makarna", "Öğrenci", "İçecek", "Tatlı", "Hamburger", "Pizza"];
+
+  @observable
+  List<bool> isClickedList = [false, false, false, false, false, false, false, false];
+
   @observable
   late GoogleMapController mapController;
   final LatLng center = const LatLng(41.075781, 28.961359);
@@ -35,23 +40,6 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   TextEditingController searchController = TextEditingController();
   @observable
   bool isSearch = false;
-
-  @observable
-  bool isFilterVejeteryanClicked = false;
-  @observable
-  bool isFilterVeganClicked = false;
-  @observable
-  bool isFilterMakarnaClicked = false;
-  @observable
-  bool isFilterOgrenciClicked = false;
-  @observable
-  bool isFilterIcecekClicked = false;
-  @observable
-  bool isFilterTatliClicked = false;
-  @observable
-  bool isFilterHamburgerClicked = false;
-  @observable
-  bool isFilterPizzaClicked = false;
 
   final marker = const Marker(
       markerId: MarkerId("ev"),
@@ -80,7 +68,7 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   }
 
   @action
-  void clickedChaneg(bool value) {
-    value = !value;
+  void changeClick(int index) {
+    isClickedList[index] = !isClickedList[index];
   }
 }

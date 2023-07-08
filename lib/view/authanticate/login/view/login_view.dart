@@ -4,8 +4,6 @@ import 'package:oua/core/init/theme/app_theme_light.dart';
 import 'package:oua/view/authanticate/login/view_model/login_view_model.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../../../core/constants/app/app_constants.dart';
-
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -18,34 +16,160 @@ class LoginView extends StatelessWidget {
           model.init();
         },
         onPageBuilder: (BuildContext context, LoginViewModel vm) => Scaffold(
-              appBar: AppBar(
-                centerTitle: true,
-                title: const Text(ApplicationConstants.APP_NAME, style: TextStyle(color: Colors.black)),
-              ),
               key: vm.formState,
-              body: SingleChildScrollView(
-                physics: const NeverScrollableScrollPhysics(),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: context.verticalPaddingNormal,
-                        child: _inputMail(vm, context),
+              body: SafeArea(
+                child: SingleChildScrollView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: context.height * 0.15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _girisYapText(),
+                          Text(
+                            "Kullanıcı Adı ve Şifren ile Giriş Yap",
+                            style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+                          ),
+                          _kullaniciAdiTextField(context),
+                          _sifreTextField(context),
+                          _sifremiUnuttumRow(context),
+                          _girisYapButton(context),
+                          Padding(
+                            padding: EdgeInsets.only(top: context.height * 0.02),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  "Hesap Oluştumradın Mı?",
+                                  style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+                                ),
+                                Text(
+                                  "Hemen Kayıt Ol!",
+                                  style: TextStyle(
+                                      color: AppThemeLight.instance.appColorScheme.surface,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                      Padding(
-                        padding: context.verticalPaddingNormal,
-                        child: _inputPassword(vm, context),
-                      ),
-                      Padding(
-                        padding: context.onlyTopPaddingMedium,
-                        child: _buttonLogin(context, vm),
-                      ),
-                    ],
-                  ),
-                ),
+                    )),
               ),
             ));
+  }
+
+  Padding _girisYapButton(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: context.height * 0.05),
+      child: Container(
+        width: context.width * 0.4,
+        height: context.height * 0.05,
+        decoration: BoxDecoration(
+            color: AppThemeLight.instance.appColorScheme.surface,
+            borderRadius: const BorderRadius.all(Radius.circular(100))),
+        child: const Center(
+            child: Text(
+          "Giriş Yap",
+          style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+        )),
+      ),
+    );
+  }
+
+  Padding _sifremiUnuttumRow(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: context.width * 0.05),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          const Text(
+            "*Kullanıcı adı veya şifre hatalı",
+            style: TextStyle(color: Colors.red),
+          ),
+          Text(
+            "Şifremi Unuttum",
+            style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+          )
+        ],
+      ),
+    );
+  }
+
+  Padding _sifreTextField(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: context.width * 0.1),
+      child: SizedBox(
+        width: context.width,
+        child: Padding(
+          padding: EdgeInsets.only(left: context.width * 0.1, right: context.width * 0.1),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Şifre:",
+                textAlign: TextAlign.start,
+                style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    iconColor: AppThemeLight.instance.appColorScheme.surface,
+                    icon: const Icon(Icons.lock),
+                    border: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppThemeLight.instance.appColorScheme.surface))),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding _kullaniciAdiTextField(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: context.width * 0.1),
+      child: SizedBox(
+        width: context.width,
+        child: Padding(
+          padding: EdgeInsets.only(left: context.width * 0.1, right: context.width * 0.1),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Kullanıcı Adı:",
+                textAlign: TextAlign.start,
+                style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    iconColor: AppThemeLight.instance.appColorScheme.surface,
+                    icon: const Icon(Icons.person),
+                    border: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppThemeLight.instance.appColorScheme.surface))),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Row _girisYapText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.key,
+          color: AppThemeLight.instance.appColorScheme.surface,
+          size: 45,
+        ),
+        Text(
+          "Giriş Yap",
+          style: TextStyle(
+              fontSize: 30, color: AppThemeLight.instance.appColorScheme.surface, fontWeight: FontWeight.bold),
+        )
+      ],
+    );
   }
 
   Container _buttonLogin(BuildContext context, LoginViewModel vm) {
