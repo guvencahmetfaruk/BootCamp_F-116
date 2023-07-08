@@ -20,56 +20,49 @@ class MapView extends StatelessWidget {
           model.setContext(context);
           model.init();
         },
-        onPageBuilder: (context, vm) => Observer(
-              builder: (_) {
-                return Scaffold(
-                    appBar: AppBar(
-                      title: Observer(
-                        builder: (_) {
-                          if (vm.isSearch) {
-                            return TextField(
-                              controller: vm.searchController,
-                              keyboardType: TextInputType.visiblePassword,
-                              decoration: _inputdec(context, "Arama"),
-                            );
-                          } else {
-                            return const Text(
-                              ApplicationConstants.APP_NAME,
-                              style: TextStyle(color: Colors.black),
-                            );
-                          }
-                        },
-                      ),
-                      centerTitle: true,
-                      iconTheme: const IconThemeData(color: Colors.black),
-                      actions: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: InkWell(
-                              onTap: () {
-                                vm.searchChange();
-                              },
-                              child: const Icon(Icons.search)),
-                        )
-                      ],
-                    ),
-                    drawer: Observer(builder: (_) {
-                      return _mapDrawer(context, vm);
-                    }),
-                    body: Observer(
-                      builder: (_) {
-                        return GoogleMap(
-                          onMapCreated: vm.onMapCreated,
-                          initialCameraPosition: CameraPosition(
-                            target: vm.center,
-                            zoom: 13.0,
-                          ),
-                          markers: vm.markerList,
-                        );
+        onPageBuilder: (context, vm) => Scaffold(
+            appBar: AppBar(
+              title: Observer(
+                builder: (_) {
+                  if (vm.isSearch) {
+                    return TextField(
+                      controller: vm.searchController,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: _inputdec(context, "Arama"),
+                    );
+                  } else {
+                    return const Text(
+                      ApplicationConstants.APP_NAME,
+                      style: TextStyle(color: Colors.black),
+                    );
+                  }
+                },
+              ),
+              centerTitle: true,
+              iconTheme: const IconThemeData(color: Colors.black),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: InkWell(
+                      onTap: () {
+                        vm.searchChange();
                       },
-                    ));
+                      child: const Icon(Icons.search)),
+                )
+              ],
+            ),
+            drawer: _mapDrawer(context, vm),
+            body: Observer(
+              builder: (_) {
+                return GoogleMap(
+                    onMapCreated: vm.onMapCreated,
+                    initialCameraPosition: CameraPosition(
+                      target: vm.center,
+                      zoom: 13.0,
+                    ),
+                    markers: vm.markerList);
               },
-            ));
+            )));
   }
 
   Widget _mapDrawer(BuildContext context, MapViewModel vm) {
@@ -103,59 +96,59 @@ class MapView extends StatelessWidget {
                             )
                           ],
                         ),
-                        _drawerLine("Vejeteryan", vm.isFilterVejeteryanClicked, vm),
-                        _drawerLine("Vegan", vm.isFilterVeganClicked, vm),
-                        _drawerLine("Makarna", vm.isFilterMakarnaClicked, vm),
-                        _drawerLine("Öğrenciyim", vm.isFilterOgrenciClicked, vm),
-                        _drawerLine("İçecek", vm.isFilterIcecekClicked, vm),
-                        _drawerLine("Tatlı ", vm.isFilterIcecekClicked, vm),
-                        _drawerLine("Hamburger", vm.isFilterHamburgerClicked, vm),
-                        _drawerLine("Pizza", vm.isFilterPizzaClicked, vm),
+                        ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: vm.filterList.length,
+                          itemBuilder: (context, index) {
+                            return _drawerLine(vm.filterList[index], vm.isClickedList[index], vm, index);
+                          },
+                        )
                       ],
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: context.width * 0.52),
-                  width: context.width * 0.12,
-                  height: context.height * 0.12,
-                  decoration: const BoxDecoration(
-                      color: Colors.white60,
-                      shape: BoxShape.circle,
-                      boxShadow: [BoxShadow(color: Colors.black54, spreadRadius: 1, blurRadius: 2)]),
-                  child: Center(child: Icon(Icons.menu, color: AppThemeLight.instance.appColorScheme.surface)),
-                ),
+                // Container(
+                //   margin: EdgeInsets.only(left: context.width * 0.52, top: context.width * 0.08),
+                //   width: context.width * 0.12,
+                //   height: context.height * 0.10,
+                //   decoration: const BoxDecoration(
+                //       color: Colors.white60,
+                //       shape: BoxShape.circle,
+                //       boxShadow: [BoxShadow(color: Colors.black54, spreadRadius: 1, blurRadius: 2)]),
+                //   child: Center(child: Icon(Icons.menu, color: AppThemeLight.instance.appColorScheme.surface)),
+                // ),
               ])),
         ),
       ],
     );
   }
 
-  Widget _drawerLine(String drawerText, bool isClicked, MapViewModel vm) {
-    return InkWell(
-      onTap: () {
-        print(drawerText);
-        print(isClicked);
-        vm.clickedChaneg(isClicked);
-      },
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: [
-              Icon(
-                isClicked ? Icons.radio_button_checked : Icons.radio_button_off,
-                color: Colors.white,
-              ),
-              Text(
-                drawerText,
-                style: const TextStyle(fontSize: 20, color: Colors.white),
-              )
-            ],
+  Widget _drawerLine(String drawerText, bool isClicked, MapViewModel vm, int index) {
+    return Observer(builder: (_) {
+      return InkWell(
+        onTap: () {
+          vm.changeClick(index);
+        },
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              children: [
+                Icon(
+                  vm.isClickedList[index] ? Icons.radio_button_checked : Icons.radio_button_off,
+                  color: Colors.white,
+                ),
+                Text(
+                  drawerText,
+                  style: const TextStyle(fontSize: 20, color: Colors.white),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 

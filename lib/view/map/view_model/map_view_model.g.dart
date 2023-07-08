@@ -9,6 +9,22 @@ part of 'map_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$MapViewModel on _MapViewModelBase, Store {
+  late final _$isClickedListAtom =
+      Atom(name: '_MapViewModelBase.isClickedList', context: context);
+
+  @override
+  List<bool> get isClickedList {
+    _$isClickedListAtom.reportRead();
+    return super.isClickedList;
+  }
+
+  @override
+  set isClickedList(List<bool> value) {
+    _$isClickedListAtom.reportWrite(value, super.isClickedList, () {
+      super.isClickedList = value;
+    });
+  }
+
   late final _$mapControllerAtom =
       Atom(name: '_MapViewModelBase.mapController', context: context);
 
@@ -89,142 +105,6 @@ mixin _$MapViewModel on _MapViewModelBase, Store {
     });
   }
 
-  late final _$isFilterVejeteryanClickedAtom = Atom(
-      name: '_MapViewModelBase.isFilterVejeteryanClicked', context: context);
-
-  @override
-  bool get isFilterVejeteryanClicked {
-    _$isFilterVejeteryanClickedAtom.reportRead();
-    return super.isFilterVejeteryanClicked;
-  }
-
-  @override
-  set isFilterVejeteryanClicked(bool value) {
-    _$isFilterVejeteryanClickedAtom
-        .reportWrite(value, super.isFilterVejeteryanClicked, () {
-      super.isFilterVejeteryanClicked = value;
-    });
-  }
-
-  late final _$isFilterVeganClickedAtom =
-      Atom(name: '_MapViewModelBase.isFilterVeganClicked', context: context);
-
-  @override
-  bool get isFilterVeganClicked {
-    _$isFilterVeganClickedAtom.reportRead();
-    return super.isFilterVeganClicked;
-  }
-
-  @override
-  set isFilterVeganClicked(bool value) {
-    _$isFilterVeganClickedAtom.reportWrite(value, super.isFilterVeganClicked,
-        () {
-      super.isFilterVeganClicked = value;
-    });
-  }
-
-  late final _$isFilterMakarnaClickedAtom =
-      Atom(name: '_MapViewModelBase.isFilterMakarnaClicked', context: context);
-
-  @override
-  bool get isFilterMakarnaClicked {
-    _$isFilterMakarnaClickedAtom.reportRead();
-    return super.isFilterMakarnaClicked;
-  }
-
-  @override
-  set isFilterMakarnaClicked(bool value) {
-    _$isFilterMakarnaClickedAtom
-        .reportWrite(value, super.isFilterMakarnaClicked, () {
-      super.isFilterMakarnaClicked = value;
-    });
-  }
-
-  late final _$isFilterOgrenciClickedAtom =
-      Atom(name: '_MapViewModelBase.isFilterOgrenciClicked', context: context);
-
-  @override
-  bool get isFilterOgrenciClicked {
-    _$isFilterOgrenciClickedAtom.reportRead();
-    return super.isFilterOgrenciClicked;
-  }
-
-  @override
-  set isFilterOgrenciClicked(bool value) {
-    _$isFilterOgrenciClickedAtom
-        .reportWrite(value, super.isFilterOgrenciClicked, () {
-      super.isFilterOgrenciClicked = value;
-    });
-  }
-
-  late final _$isFilterIcecekClickedAtom =
-      Atom(name: '_MapViewModelBase.isFilterIcecekClicked', context: context);
-
-  @override
-  bool get isFilterIcecekClicked {
-    _$isFilterIcecekClickedAtom.reportRead();
-    return super.isFilterIcecekClicked;
-  }
-
-  @override
-  set isFilterIcecekClicked(bool value) {
-    _$isFilterIcecekClickedAtom.reportWrite(value, super.isFilterIcecekClicked,
-        () {
-      super.isFilterIcecekClicked = value;
-    });
-  }
-
-  late final _$isFilterTatliClickedAtom =
-      Atom(name: '_MapViewModelBase.isFilterTatliClicked', context: context);
-
-  @override
-  bool get isFilterTatliClicked {
-    _$isFilterTatliClickedAtom.reportRead();
-    return super.isFilterTatliClicked;
-  }
-
-  @override
-  set isFilterTatliClicked(bool value) {
-    _$isFilterTatliClickedAtom.reportWrite(value, super.isFilterTatliClicked,
-        () {
-      super.isFilterTatliClicked = value;
-    });
-  }
-
-  late final _$isFilterHamburgerClickedAtom = Atom(
-      name: '_MapViewModelBase.isFilterHamburgerClicked', context: context);
-
-  @override
-  bool get isFilterHamburgerClicked {
-    _$isFilterHamburgerClickedAtom.reportRead();
-    return super.isFilterHamburgerClicked;
-  }
-
-  @override
-  set isFilterHamburgerClicked(bool value) {
-    _$isFilterHamburgerClickedAtom
-        .reportWrite(value, super.isFilterHamburgerClicked, () {
-      super.isFilterHamburgerClicked = value;
-    });
-  }
-
-  late final _$isFilterPizzaClickedAtom =
-      Atom(name: '_MapViewModelBase.isFilterPizzaClicked', context: context);
-
-  @override
-  bool get isFilterPizzaClicked {
-    _$isFilterPizzaClickedAtom.reportRead();
-    return super.isFilterPizzaClicked;
-  }
-
-  @override
-  set isFilterPizzaClicked(bool value) {
-    _$isFilterPizzaClickedAtom.reportWrite(value, super.isFilterPizzaClicked,
-        () {
-      super.isFilterPizzaClicked = value;
-    });
-  }
-
   late final _$_MapViewModelBaseActionController =
       ActionController(name: '_MapViewModelBase', context: context);
 
@@ -262,11 +142,11 @@ mixin _$MapViewModel on _MapViewModelBase, Store {
   }
 
   @override
-  void clickedChaneg(bool value) {
+  void changeClick(int index) {
     final _$actionInfo = _$_MapViewModelBaseActionController.startAction(
-        name: '_MapViewModelBase.clickedChaneg');
+        name: '_MapViewModelBase.changeClick');
     try {
-      return super.clickedChaneg(value);
+      return super.changeClick(index);
     } finally {
       _$_MapViewModelBaseActionController.endAction(_$actionInfo);
     }
@@ -275,19 +155,12 @@ mixin _$MapViewModel on _MapViewModelBase, Store {
   @override
   String toString() {
     return '''
+isClickedList: ${isClickedList},
 mapController: ${mapController},
 myIcon: ${myIcon},
 markerList: ${markerList},
 searchController: ${searchController},
-isSearch: ${isSearch},
-isFilterVejeteryanClicked: ${isFilterVejeteryanClicked},
-isFilterVeganClicked: ${isFilterVeganClicked},
-isFilterMakarnaClicked: ${isFilterMakarnaClicked},
-isFilterOgrenciClicked: ${isFilterOgrenciClicked},
-isFilterIcecekClicked: ${isFilterIcecekClicked},
-isFilterTatliClicked: ${isFilterTatliClicked},
-isFilterHamburgerClicked: ${isFilterHamburgerClicked},
-isFilterPizzaClicked: ${isFilterPizzaClicked}
+isSearch: ${isSearch}
     ''';
   }
 }

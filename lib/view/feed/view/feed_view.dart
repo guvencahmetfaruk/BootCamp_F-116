@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oua/core/base/view/base_view.dart';
+import 'package:oua/view/_product/widgets/post_widget.dart';
 import 'package:oua/view/feed/view_model/feed_view_model.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -56,8 +57,18 @@ class TariflerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("tarifler")),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: ListView.builder(
+          
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 2,
+          itemBuilder: (context, index) {
+            return const PostView();
+          },
+        ),
+      ),
     );
   }
 }

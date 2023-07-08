@@ -25,6 +25,22 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
     });
   }
 
+  late final _$scaffoldKeyAtom =
+      Atom(name: '_ProfileViewModelBase.scaffoldKey', context: context);
+
+  @override
+  GlobalKey<ScaffoldState> get scaffoldKey {
+    _$scaffoldKeyAtom.reportRead();
+    return super.scaffoldKey;
+  }
+
+  @override
+  set scaffoldKey(GlobalKey<ScaffoldState> value) {
+    _$scaffoldKeyAtom.reportWrite(value, super.scaffoldKey, () {
+      super.scaffoldKey = value;
+    });
+  }
+
   late final _$_ProfileViewModelBaseActionController =
       ActionController(name: '_ProfileViewModelBase', context: context);
 
@@ -53,7 +69,8 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
   @override
   String toString() {
     return '''
-isLoggedIn: ${isLoggedIn}
+isLoggedIn: ${isLoggedIn},
+scaffoldKey: ${scaffoldKey}
     ''';
   }
 }
