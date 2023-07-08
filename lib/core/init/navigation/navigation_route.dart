@@ -17,7 +17,7 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.DEFAULT:
-        return normalNavigatie(MainFeedView(initialIndex: 2), NavigationConstants.DEFAULT);
+        return normalNavigatie(MainFeedView(initialIndex: 1), NavigationConstants.DEFAULT);
 
       case NavigationConstants.FEED:
         return normalNavigatie(const FeedView(), NavigationConstants.DEFAULT);

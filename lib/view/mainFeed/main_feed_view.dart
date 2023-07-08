@@ -4,7 +4,6 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oua/view/feed/view/feed_view.dart';
 import 'package:oua/view/map/view/map_view.dart';
 import 'package:oua/view/profile/view/profile_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -79,12 +78,6 @@ class _MainFeedViewState extends State<MainFeedView> with TickerProviderStateMix
         inactiveColorPrimary: Colors.white,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(CupertinoIcons.home),
-        title: ("Feed"),
-        activeColorPrimary: AppThemeLight.instance.appColorScheme.secondary,
-        inactiveColorPrimary: Colors.white,
-      ),
-      PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.profile_circled),
         title: ("Profile"),
         activeColorPrimary: AppThemeLight.instance.appColorScheme.secondary,
@@ -94,7 +87,7 @@ class _MainFeedViewState extends State<MainFeedView> with TickerProviderStateMix
   }
 
   List<Widget> _buildScreens() {
-    return [const MapView(), const FeedView(), ProfileView()];
+    return [const MapView(), ProfileView()];
   }
 
   Widget _willPopScopeDialog(BuildContext context) {

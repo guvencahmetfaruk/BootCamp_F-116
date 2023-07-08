@@ -31,4 +31,8 @@ abstract class _LoginViewModelBase extends BaseViewModel with Store {
   Future<bool> signIn(String email, String password) async {
     return await authService.signInUser(email, password);
   }
+
+  void navigateToMRegister() {
+    navigation.navigateToPage(path: NavigationConstants.REGISTER);
+  }
 }
