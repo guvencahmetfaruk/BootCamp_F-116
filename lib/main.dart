@@ -2,8 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oua/core/init/navigation/navigation_route.dart';
+import 'package:oua/view/authanticate/register/view/register_view.dart';
 
+import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';
 import 'firebase_options.dart';
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Colors.white)),
               debugShowCheckedModeBanner: false,
               navigatorKey: NavigationService.instance.navigatorKey,
-              // home: const LoginView(),
+              // home:  RegisterView(),
               onGenerateRoute: NavigationRoute.instance.generateRoute,
             ));
       },

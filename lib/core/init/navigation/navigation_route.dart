@@ -23,7 +23,7 @@ class NavigationRoute {
         return normalNavigatie(const FeedView(), NavigationConstants.DEFAULT);
 
       case NavigationConstants.MAINFEED:
-        return normalNavigatie(MainFeedView(initialIndex: 1), NavigationConstants.DEFAULT);
+        return normalNavigatie(MainFeedView(initialIndex: 0), NavigationConstants.DEFAULT);
 
       case NavigationConstants.MAP:
         return normalNavigatie(const MapView(), NavigationConstants.DEFAULT);

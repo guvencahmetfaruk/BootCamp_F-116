@@ -6,7 +6,9 @@ import 'package:mobx/mobx.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:oua/core/constants/image/image_constants.dart';
 import 'package:oua/repository/restaurant_service.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+import '../../../Util/MapUtil.dart';
 import '../../../core/base/model/base_view_model.dart';
 part 'map_view_model.g.dart';
 
@@ -29,6 +31,9 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   @observable
   List<DocumentSnapshot> restaurants = [];
 
+  @observable
+  bool isLoading = false;
+
   List filterList = ["Vejeteryan", "Vegan", "Makarna", "Öğrenci", "İçecek", "Tatlı", "Hamburger", "Pizza"];
 
   @observable
@@ -36,7 +41,7 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
 
   @observable
   late GoogleMapController mapController;
-  final LatLng center = const LatLng(41.075781, 28.961359);
+  final LatLng center = const LatLng(41.0811956, 28.9555549);
   @observable
   late BitmapDescriptor myIcon;
   @observable
@@ -45,17 +50,23 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   TextEditingController searchController = TextEditingController();
   @observable
   bool isSearch = false;
+  @observable
+  bool isRestaurantInfoVisible = false;
 
-  final marker = const Marker(
-      markerId: MarkerId("ev"),
-      position: LatLng(41.075781, 28.961359),
-      // icon: myIcon,
-      infoWindow: InfoWindow(title: "Ev", snippet: "evimin adresi"));
-  final marker1 = const Marker(
-      markerId: MarkerId("ev"),
-      position: LatLng(41.075777, 28.961344),
-      // icon: myIcon,
-      infoWindow: InfoWindow(title: "Ev", snippet: "evimin adresi"));
+  @observable
+  String resName = "";
+
+  @observable
+  Map<String, dynamic> urunFiyat = {};
+  @observable
+  Map<String, dynamic> urunResim = {};
+  @observable
+  double lat = 0;
+  @observable
+  double lon = 0;
+
+  @observable
+  PanelController panelController = PanelController();
 
   @action
   void onMapCreated(GoogleMapController controller) {
@@ -78,6 +89,7 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
   }
 
   Future<void> _loadRestaurants() async {
+    loadingChange();
     List<DocumentSnapshot> restaurantsList = await restaurantService.getRestaurants();
     restaurants = restaurantsList;
     for (final i in restaurants) {
@@ -87,7 +99,25 @@ abstract class _MapViewModelBase extends BaseViewModel with Store {
       addMarker(Marker(
           markerId: MarkerId(data["name"]),
           position: LatLng(data["latitude"], data["longitude"]),
+          onTap: () {
+            resName = data["name"];
+            urunFiyat = data["ürünFiyat"];
+            urunResim = data["ürünResim"];
+            lat = data["latitude"];
+            lon = data["longitude"];
+          },
           infoWindow: InfoWindow(title: data["name"], snippet: data["description"])));
     }
+    loadingChange();
+  }
+
+  void loadingChange() {
+    print("isloadingchange");
+    isLoading = !isLoading;
+  }
+
+  @action
+  void redirectMap(lat, lon) {
+    MapUtils.openMap(lat, lon);
   }
 }

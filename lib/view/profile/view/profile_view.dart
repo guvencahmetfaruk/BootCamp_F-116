@@ -48,8 +48,8 @@ class ProfileView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              "@KullanıcıAdı",
+             const Text(
+              "@username",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             ElevatedButton(
@@ -110,7 +110,7 @@ class ProfileView extends StatelessWidget {
       Padding(
         padding: context.paddingLow,
         child: const Center(
-          child: Text("Kullanıcı İsmi"),
+          child: Text("Name Surname"),
         ),
       ),
       Padding(
@@ -118,7 +118,7 @@ class ProfileView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Kullanıcı Bilgileri"),
+            
             ElevatedButton(
                 onPressed: () {
                   authService.signOutUser();
@@ -126,7 +126,7 @@ class ProfileView extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
                 child: Icon(
-                  Icons.settings,
+                  Icons.logout_outlined,
                   color: AppThemeLight.instance.appColorScheme.surface,
                 )),
           ],

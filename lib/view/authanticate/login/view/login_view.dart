@@ -178,7 +178,7 @@ class LoginView extends StatelessWidget {
     return Container(
         width: context.width * 0.7,
         height: context.height * 0.06,
-        decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(15)),
+        decoration: BoxDecoration(color: AppThemeLight.instance.appColorScheme.surface, borderRadius: BorderRadius.circular(15)),
         child: ElevatedButton(
           onPressed: () async {
             var value = await vm.signIn(vm.mail_controller.text, vm.password_controller.text);

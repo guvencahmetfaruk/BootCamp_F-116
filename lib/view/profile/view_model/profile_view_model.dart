@@ -3,8 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:oua/core/base/model/base_view_model.dart';
+import 'package:oua/core/constants/enums/locale_keys_enum.dart';
 import 'package:oua/core/constants/navigation/navigation_constants.dart';
+import 'package:oua/core/init/cache/locale_manager.dart';
 import 'package:oua/repository/auth_service.dart';
+import 'package:oua/repository/user_service.dart';
 part 'profile_view_model.g.dart';
 
 class ProfileViewModel = _ProfileViewModelBase with _$ProfileViewModel;
@@ -18,7 +21,7 @@ abstract class _ProfileViewModelBase extends BaseViewModel with Store {
   }
 
   final AuthService authService = AuthService();
-
+  final UserService userService = UserService();
   @observable
   bool isLoggedIn = false;
 
