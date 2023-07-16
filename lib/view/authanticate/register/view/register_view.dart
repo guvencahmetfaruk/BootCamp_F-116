@@ -55,6 +55,7 @@ class RegisterView extends StatelessWidget {
         Expanded(
             flex: 9,
             child: TextField(
+              keyboardType: TextInputType.emailAddress,
               controller: vm.mail_controller,
               decoration: const InputDecoration(labelText: "Email"),
             ))

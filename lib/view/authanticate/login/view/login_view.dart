@@ -139,6 +139,7 @@ class LoginView extends StatelessWidget {
                 "Email:",
                 textAlign: TextAlign.start,
                 style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+
               ),
               TextField(
                 keyboardType: TextInputType.emailAddress,
