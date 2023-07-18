@@ -5,6 +5,8 @@ enum PreferencesKeys {
   PREMIUM,
   USERID,
   NAME,
+  SURNAME,
+  USERNAME,
   MAIL,
   PHONE,
 }

@@ -9,6 +9,38 @@ part of 'map_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$MapViewModel on _MapViewModelBase, Store {
+  late final _$restaurantsAtom =
+      Atom(name: '_MapViewModelBase.restaurants', context: context);
+
+  @override
+  List<DocumentSnapshot<Object?>> get restaurants {
+    _$restaurantsAtom.reportRead();
+    return super.restaurants;
+  }
+
+  @override
+  set restaurants(List<DocumentSnapshot<Object?>> value) {
+    _$restaurantsAtom.reportWrite(value, super.restaurants, () {
+      super.restaurants = value;
+    });
+  }
+
+  late final _$isLoadingAtom =
+      Atom(name: '_MapViewModelBase.isLoading', context: context);
+
+  @override
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
+  }
+
+  @override
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
+    });
+  }
+
   late final _$isClickedListAtom =
       Atom(name: '_MapViewModelBase.isClickedList', context: context);
 
@@ -105,6 +137,87 @@ mixin _$MapViewModel on _MapViewModelBase, Store {
     });
   }
 
+  late final _$isRestaurantInfoVisibleAtom =
+      Atom(name: '_MapViewModelBase.isRestaurantInfoVisible', context: context);
+
+  @override
+  bool get isRestaurantInfoVisible {
+    _$isRestaurantInfoVisibleAtom.reportRead();
+    return super.isRestaurantInfoVisible;
+  }
+
+  @override
+  set isRestaurantInfoVisible(bool value) {
+    _$isRestaurantInfoVisibleAtom
+        .reportWrite(value, super.isRestaurantInfoVisible, () {
+      super.isRestaurantInfoVisible = value;
+    });
+  }
+
+  late final _$resNameAtom =
+      Atom(name: '_MapViewModelBase.resName', context: context);
+
+  @override
+  String get resName {
+    _$resNameAtom.reportRead();
+    return super.resName;
+  }
+
+  @override
+  set resName(String value) {
+    _$resNameAtom.reportWrite(value, super.resName, () {
+      super.resName = value;
+    });
+  }
+
+  late final _$urunFiyatAtom =
+      Atom(name: '_MapViewModelBase.urunFiyat', context: context);
+
+  @override
+  Map<String, dynamic> get urunFiyat {
+    _$urunFiyatAtom.reportRead();
+    return super.urunFiyat;
+  }
+
+  @override
+  set urunFiyat(Map<String, dynamic> value) {
+    _$urunFiyatAtom.reportWrite(value, super.urunFiyat, () {
+      super.urunFiyat = value;
+    });
+  }
+
+  late final _$urunResimAtom =
+      Atom(name: '_MapViewModelBase.urunResim', context: context);
+
+  @override
+  Map<String, dynamic> get urunResim {
+    _$urunResimAtom.reportRead();
+    return super.urunResim;
+  }
+
+  @override
+  set urunResim(Map<String, dynamic> value) {
+    _$urunResimAtom.reportWrite(value, super.urunResim, () {
+      super.urunResim = value;
+    });
+  }
+
+  late final _$panelControllerAtom =
+      Atom(name: '_MapViewModelBase.panelController', context: context);
+
+  @override
+  PanelController get panelController {
+    _$panelControllerAtom.reportRead();
+    return super.panelController;
+  }
+
+  @override
+  set panelController(PanelController value) {
+    _$panelControllerAtom.reportWrite(value, super.panelController, () {
+      super.panelController = value;
+    });
+  }
+
   late final _$_MapViewModelBaseActionController =
       ActionController(name: '_MapViewModelBase', context: context);
 
@@ -155,12 +268,19 @@ mixin _$MapViewModel on _MapViewModelBase, Store {
   @override
   String toString() {
     return '''
+restaurants: ${restaurants},
+isLoading: ${isLoading},
 isClickedList: ${isClickedList},
 mapController: ${mapController},
 myIcon: ${myIcon},
 markerList: ${markerList},
 searchController: ${searchController},
-isSearch: ${isSearch}
+isSearch: ${isSearch},
+isRestaurantInfoVisible: ${isRestaurantInfoVisible},
+resName: ${resName},
+urunFiyat: ${urunFiyat},
+urunResim: ${urunResim},
+panelController: ${panelController}
     ''';
   }
 }

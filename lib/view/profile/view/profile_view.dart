@@ -48,8 +48,8 @@ class ProfileView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              "@KullanıcıAdı",
+             const Text(
+              "@username",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             ElevatedButton(
@@ -74,6 +74,7 @@ class ProfileView extends StatelessWidget {
                                 height: context.height * 0.25,
                                 width: context.width * 0.8,
                                 decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
+                                child: Center(child: Text("Favori restoran ${index +1}",style: const TextStyle(color: Colors.white),)),
                               ),
                             );
                           },
@@ -110,7 +111,7 @@ class ProfileView extends StatelessWidget {
       Padding(
         padding: context.paddingLow,
         child: const Center(
-          child: Text("Kullanıcı İsmi"),
+          child: Text("Name Surname"),
         ),
       ),
       Padding(
@@ -118,7 +119,7 @@ class ProfileView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Kullanıcı Bilgileri"),
+            
             ElevatedButton(
                 onPressed: () {
                   authService.signOutUser();
@@ -126,7 +127,7 @@ class ProfileView extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
                 child: Icon(
-                  Icons.settings,
+                  Icons.logout_outlined,
                   color: AppThemeLight.instance.appColorScheme.surface,
                 )),
           ],
@@ -146,6 +147,7 @@ class ProfileView extends StatelessWidget {
               color: Colors.black,
               width: context.width * 0.2,
               height: context.height * 0.1,
+              child: Center(child: Text("${index +1}",style: const TextStyle(color: Colors.white),),),
             );
           },
         ),

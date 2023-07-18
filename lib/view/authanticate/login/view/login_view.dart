@@ -30,28 +30,10 @@ class LoginView extends StatelessWidget {
                             "Kullanıcı Adı ve Şifren ile Giriş Yap",
                             style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
                           ),
-                          _kullaniciAdiTextField(context),
-                          _sifreTextField(context),
-                          _sifremiUnuttumRow(context),
-                          _girisYapButton(context),
-                          Padding(
-                            padding: EdgeInsets.only(top: context.height * 0.02),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  "Hesap Oluştumradın Mı?",
-                                  style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
-                                ),
-                                Text(
-                                  "Hemen Kayıt Ol!",
-                                  style: TextStyle(
-                                      color: AppThemeLight.instance.appColorScheme.surface,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          )
+                          _kullaniciAdiTextField(context, vm),
+                          _sifreTextField(context, vm),
+                          _girisYapButton(context, vm),
+                          _kayitOl(context, vm),
                         ],
                       ),
                     )),
@@ -59,44 +41,59 @@ class LoginView extends StatelessWidget {
             ));
   }
 
-  Padding _girisYapButton(BuildContext context) {
+  Padding _kayitOl(BuildContext context, LoginViewModel vm) {
     return Padding(
-      padding: EdgeInsets.only(top: context.height * 0.05),
-      child: Container(
-        width: context.width * 0.4,
-        height: context.height * 0.05,
-        decoration: BoxDecoration(
-            color: AppThemeLight.instance.appColorScheme.surface,
-            borderRadius: const BorderRadius.all(Radius.circular(100))),
-        child: const Center(
-            child: Text(
-          "Giriş Yap",
-          style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
-        )),
-      ),
-    );
-  }
-
-  Padding _sifremiUnuttumRow(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: context.width * 0.05),
+      padding: EdgeInsets.only(top: context.height * 0.02),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const Text(
-            "*Kullanıcı adı veya şifre hatalı",
-            style: TextStyle(color: Colors.red),
-          ),
           Text(
-            "Şifremi Unuttum",
+            "Hesap Oluştumradın Mı?",
             style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+          ),
+          InkWell(
+            onTap: () {
+              vm.navigateToMRegister();
+            },
+            child: Text(
+              "Hemen Kayıt Ol!",
+              style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface, fontWeight: FontWeight.bold),
+            ),
           )
         ],
       ),
     );
   }
 
-  Padding _sifreTextField(BuildContext context) {
+  Padding _girisYapButton(BuildContext context, LoginViewModel vm) {
+    return Padding(
+      padding: EdgeInsets.only(top: context.height * 0.05),
+      child: InkWell(
+        onTap: () async {
+          var value = await vm.signIn(vm.mail_controller.text, vm.password_controller.text);
+          if (value) {
+            vm.navigateToMainFeed();
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Bilgileriniz Yanlış")));
+          }
+        },
+        child: Container(
+          width: context.width * 0.4,
+          height: context.height * 0.05,
+          decoration: BoxDecoration(
+              color: AppThemeLight.instance.appColorScheme.surface,
+              borderRadius: const BorderRadius.all(Radius.circular(100))),
+          child: const Center(
+              child: Text(
+            "Giriş Yap",
+            style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+          )),
+        ),
+      ),
+    );
+  }
+
+  Padding _sifreTextField(BuildContext context, LoginViewModel vm) {
     return Padding(
       padding: EdgeInsets.only(top: context.width * 0.1),
       child: SizedBox(
@@ -112,6 +109,9 @@ class LoginView extends StatelessWidget {
                 style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
               ),
               TextField(
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                controller: vm.password_controller,
                 decoration: InputDecoration(
                     iconColor: AppThemeLight.instance.appColorScheme.surface,
                     icon: const Icon(Icons.lock),
@@ -125,7 +125,7 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  Padding _kullaniciAdiTextField(BuildContext context) {
+  Padding _kullaniciAdiTextField(BuildContext context, LoginViewModel vm) {
     return Padding(
       padding: EdgeInsets.only(top: context.width * 0.1),
       child: SizedBox(
@@ -136,11 +136,14 @@ class LoginView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Kullanıcı Adı:",
+                "Email:",
                 textAlign: TextAlign.start,
                 style: TextStyle(color: AppThemeLight.instance.appColorScheme.surface),
+
               ),
               TextField(
+                keyboardType: TextInputType.emailAddress,
+                controller: vm.mail_controller,
                 decoration: InputDecoration(
                     iconColor: AppThemeLight.instance.appColorScheme.surface,
                     icon: const Icon(Icons.person),
@@ -176,7 +179,7 @@ class LoginView extends StatelessWidget {
     return Container(
         width: context.width * 0.7,
         height: context.height * 0.06,
-        decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(15)),
+        decoration: BoxDecoration(color: AppThemeLight.instance.appColorScheme.surface, borderRadius: BorderRadius.circular(15)),
         child: ElevatedButton(
           onPressed: () async {
             var value = await vm.signIn(vm.mail_controller.text, vm.password_controller.text);

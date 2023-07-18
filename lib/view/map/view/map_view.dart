@@ -8,6 +8,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:oua/core/constants/app/app_constants.dart';
 import 'package:oua/core/init/theme/app_theme_light.dart';
 import 'package:oua/view/map/view_model/map_view_model.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class MapView extends StatelessWidget {
   const MapView({super.key});
@@ -54,15 +55,244 @@ class MapView extends StatelessWidget {
             drawer: _mapDrawer(context, vm),
             body: Observer(
               builder: (_) {
-                return GoogleMap(
-                    onMapCreated: vm.onMapCreated,
-                    initialCameraPosition: CameraPosition(
-                      target: vm.center,
-                      zoom: 13.0,
+                if (vm.isLoading) {
+                  return const Center(child: CircularProgressIndicator());
+                } else {
+                  return SlidingUpPanel(
+                    controller: vm.panelController,
+                    backdropTapClosesPanel: true,
+                    panel: Observer(builder: (_) {
+                      if (vm.resName == "") {
+                        return Container();
+                      } else {
+                        return _bottomSheetMenu(vm, context);
+                      }
+                    }),
+                    body: GoogleMap(
+                      onMapCreated: vm.onMapCreated,
+                      initialCameraPosition: CameraPosition(
+                        target: vm.center,
+                        zoom: 10.0,
+                      ),
+                      markers: vm.markerList,
+                      mapType: MapType.hybrid,
                     ),
-                    markers: vm.markerList);
+                  );
+                }
               },
             )));
+  }
+
+  Widget _bottomSheetMenu(MapViewModel vm, BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: context.width * 0.01),
+                child: Container(
+                  decoration:  BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppThemeLight.instance.appColorScheme.surface, // Mavi doldurma rengi
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.food_bank,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 16.0),
+              Padding(
+                padding: EdgeInsets.only(top: context.height * 0.01),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'İşletme İsmi:',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      vm.resName.toCapitalized(),
+                      style: const TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                    const Text(
+                      'Puanı: 10/10',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                    const Text(
+                      'Değerlendirme Sayısı: 5504',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                    const Text(
+                      'Yorum Sayısı: 0455',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: EdgeInsets.only(right: context.width * 0.01, top: context.height * 0.01),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        vm.redirectMap(vm.lat, vm.lon);
+                      },
+                      child: Container(
+                        width: context.width * 0.25,
+                        height: context.height * .05,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: AppThemeLight.instance.appColorScheme.surface,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Yol Tarifi Al',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 8.0),
+                    InkWell(
+                      onTap: () {
+                        // Rezervasyon yap butonuna tıklandığında gerçekleştirilecek işlemler
+                      },
+                      child: Container(
+                        width: context.width * 0.25,
+                        height: context.height * .05,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: AppThemeLight.instance.appColorScheme.surface,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Rezervasyon Yap',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    // Ürün resimleri ve fiyatları butonuna tıklandığında gerçekleştirilecek işlemler
+                  },
+                  child: Container(
+                    height: context.height * 0.05,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppThemeLight.instance.appColorScheme.surface,
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Ürün Resimleri ve Fiyatları',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 16.0),
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    print("Favorilere Eklendi");
+                  },
+                  child: Container(
+                    height: context.height * 0.05,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppThemeLight.instance.appColorScheme.surface,
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Favorilere Ekle',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16.0),
+          SizedBox(
+            height: context.height * 0.37,
+            child: SingleChildScrollView(
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: vm.urunFiyat.length,
+                itemBuilder: (context, index) {
+                  String urun = vm.urunFiyat.keys.elementAt(index);
+                  dynamic fiyat = vm.urunFiyat[urun];
+                  String resim = vm.urunResim[urun];
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                            width: context.width * 0.8,
+                            height: context.height * 0.2,
+                            child: Image.network(resim, fit: BoxFit.cover)),
+                        Text(
+                          urun.toCapitalized(),
+                          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Text("${fiyat.toString()} TL", style: const TextStyle(fontSize: 15)),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   Widget _mapDrawer(BuildContext context, MapViewModel vm) {
